@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\MedicalSystem.Orchestrator\MedicalSystem.Orchestrator.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MedicalSystem.Orchestrator\MedicalSystem.Orchestrator.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
