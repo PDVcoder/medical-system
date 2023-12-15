@@ -27,11 +27,17 @@ public class Visit
     // MedicalRecord foreign key
     [Required]
     [ForeignKey("MedicalRecord")]
-    public Guid MedicalRecordId { get; set; }
+    public Guid? MedicalRecordId { get; set; }
     public MedicalRecord MedicalRecord { get; set; }
 
     [Required]
     public Urgency Urgency { get; set; }
+
+    [Required]
+    public DateTime VisitDate { get; set; }
+
+    [Required]
+    public bool IsVisited { get; set; } = false;
 
     [Required]
     [ReadOnly(true)]
