@@ -30,14 +30,21 @@ public class User
 
     [Required]
     [PasswordPropertyText]
+    [DataType(DataType.Password)]
     public string PasswordHash { get; set; }
 
     [Required]
     public UserRole Role { get; set; }
 
     [Required]
+    [ReadOnly(true)]
+    [DataType(DataType.DateTime)]
     public DateTime RecCreated { get; set; } = DateTime.Now;
     
     [Required]
-    public DateTime RecModified { get; set; }
+    [DataType(DataType.DateTime)]
+    public DateTime RecModified { get; set; } = DateTime.Now;
+
+    public Patient Patient { get; set; }
+    public Doctor Doctor { get; set; }
 }
