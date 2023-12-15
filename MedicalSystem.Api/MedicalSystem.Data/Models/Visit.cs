@@ -1,5 +1,6 @@
 ﻿using MedicalSystem.Model.Enums;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,12 +25,6 @@ public class Visit
     public Guid DoctorId { get; set; }
     public Doctor Doctor { get; set; }
 
-    // MedicalRecord foreign key
-    [Required]
-    [ForeignKey("MedicalRecord")]
-    public Guid? MedicalRecordId { get; set; }
-    public MedicalRecord MedicalRecord { get; set; }
-
     [Required]
     public Urgency Urgency { get; set; }
 
@@ -47,4 +42,6 @@ public class Visit
     [Required]
     [DataType(DataType.DateTime)]
     public DateTime ReqModified { get; set; } = DateTime.Now;
+
+    public ICollection<MedicalRecord> MedicalRecords { get; set; }
 }

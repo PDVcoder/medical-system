@@ -23,6 +23,12 @@ public class MedicalRecord
     public Guid DoctorId { get; set; }
     public Doctor Doctor { get; set; }
 
+    // MedicalRecord foreign key
+    [Required]
+    [ForeignKey("Visit")]
+    public Guid? VisitId { get; set; }
+    public Visit Visit { get; set; }
+
     [Required]
     public string Symptoms { get; set; }
 
@@ -41,7 +47,5 @@ public class MedicalRecord
     [DataType(DataType.DateTime)]
     public DateTime ReqModified { get; set; } = DateTime.Now;
 
-    public Visit Visit { get; set; }
     public PrescribedTreatment PrescribedTreatment { get; set; }
-
 }
