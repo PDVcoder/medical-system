@@ -3,7 +3,6 @@ using MedicalSystem.Data.Models;
 using MedicalSystem.Model.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection;
